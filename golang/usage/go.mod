@@ -1,4 +1,4 @@
-module github.com/longlnOff/microservices-proto/golang/usage
+module github.com/longlnOff/usages-proto/golang/usage
 
 go 1.24.3
 
