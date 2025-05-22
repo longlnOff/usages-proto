@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/longlnOff/usages-proto/usage";
+
+
+message UserInfo {
+    string user_uuid = 1;
+    string user_email = 2;
+    string user_key_name = 3;
+}
+
+message InferenceInfo {
+    string model_type = 1;
+    string model_provider = 2;
+    string model_name = 3;
+    string model_inferene_type = 4;
+    string call_type = 5;
+}
+
+message UsageInfo {
+    map<string, uint64> usage_details = 1;
+    string usage_details_string = 2;
+    string input = 3;
+    string output = 4;
+    string level = 5;
+    string message = 6;
+    google.protobuf.Timestamp start_time = 7;
+    google.protobuf.Timestamp end_time = 8;
+    map<string, string> metadata = 9;
+    string additional_info = 10;
+}
+
+message CreateUsageRequest {
+    UserInfo user_info = 1;
+    InferenceInfo inference_info = 2;
+    UsageInfo usage_info = 3;
+}
+
+message CreateUsageResponse {
+    bool error = 1;
+    string message = 2;
+}
+
+service Usage {
+    rpc SaveUsage(CreateUsageRequest) returns (CreateUsageResponse){}
+}
