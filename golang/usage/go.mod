@@ -1,10 +1,12 @@
 module github.com/longlnOff/usages-proto/golang/usage
 
-go 1.24.3
+go 1.23
+
+toolchain go1.23.9
 
 require (
 	github.com/golang/protobuf v1.5.4
-	google.golang.org/grpc v1.72.1
+	google.golang.org/grpc v1.72.2
 	google.golang.org/protobuf v1.36.6
 )
 
