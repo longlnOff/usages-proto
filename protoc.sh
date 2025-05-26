@@ -36,7 +36,7 @@ protoc --go_out=./golang --go_opt=paths=source_relative \
   ./${SERVICE_NAME}/*.proto
 
 # Generate Python stubs
-protoc --python_out=./python \
+python3.11 -m grpc_tools.protoc -I. --python_out=./python \
   --grpc_python_out=./python \
   ./${SERVICE_NAME}/*.proto
 
