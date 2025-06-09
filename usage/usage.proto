@@ -20,7 +20,7 @@ message InferenceInfo {
 }
 
 message UsageInfo {
-    map<string, uint64> usage_details = 1;
+    map<string, float64> usage_details = 1;
     string usage_details_string = 2;
     string input = 3;
     string output = 4;
